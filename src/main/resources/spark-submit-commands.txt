@@ -1,0 +1,11 @@
+With Structured Logging Enabled
+-------------------------------
+spark-submit --class de.deloitte.spark.BatchMetricsTest --files file:///home/vijai/custom-log4j.properties --jars
+file:///home/vijai/kafka-log4j-appender-2.2.0.jar,file:////usr/hdp/current/kafka-broker/libs/kafka-clients-1.1.1.3.0.1
+.0-187.jar,file:////home/vijai/commons-logging-assembly-0.1.0-SNAPSHOT.jar --conf "spark.driver.extraJavaOptions=-Dlog4j
+.configuration=custom-log4j.properties" --conf "spark.executor.extraJavaOptions=-Dlog4j.configuration=custom-log4j
+.properties" --conf "spark.driver.extraClassPath=kafka-log4j-appender-2.2.0.jar,kafka-clients-1.1.1.3.0.1.0-187.jar,
+commons-logging-assembly-0.1.0-SNAPSHOT.jar" --conf "spark.executor.extraClassPath=kafka-log4j-appender-2.2.0.jar,
+kafka-clients-1.1.1.3.0.1.0-187.jar,commons-logging-assembly-0.1.0-SNAPSHOT.jar" --master yarn --deploy-mode cluster
+/home/vijai/metrics-logging-commons-assembly-0.1.0-SNAPSHOT.jar
+
